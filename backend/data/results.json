@@ -1,0 +1,718 @@
+{
+  "exported_at": "2026-05-12T18:09:40.119991+00:00",
+  "dataset_source": "dataset:lanl_auth_sample.csv",
+  "summary_by_mode": {
+    "no_memory": {
+      "retention_avg": 0.1833375,
+      "consistency_avg": 0.6653125,
+      "personalization_avg": 0.34375,
+      "aggregate_avg": 0.37605,
+      "latency_avg_ms": 5048.35125
+    },
+    "short_term": {
+      "retention_avg": 0.1984375,
+      "consistency_avg": 0.8038875,
+      "personalization_avg": 0.1875,
+      "aggregate_avg": 0.3767875,
+      "latency_avg_ms": 2270.5975000000003
+    },
+    "long_term": {
+      "retention_avg": 0.1380125,
+      "consistency_avg": 0.905925,
+      "personalization_avg": 0.1875,
+      "aggregate_avg": 0.383225,
+      "latency_avg_ms": 1537.4025
+    },
+    "hybrid": {
+      "retention_avg": 0.13125,
+      "consistency_avg": 0.9109375,
+      "personalization_avg": 0.15625,
+      "aggregate_avg": 0.37265000000000004,
+      "latency_avg_ms": 1664.4825
+    }
+  },
+  "results": [
+    {
+      "scenario_id": "lanl-failed-logins-001",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.4625,
+      "consistency_score": 0.4098,
+      "personalization_score": 0.75,
+      "aggregate": 0.5329,
+      "latency_avg_ms": 1874.95,
+      "mitre_detected": [
+        "T1110",
+        "T1190",
+        "T1021",
+        "T1082",
+        "T1078",
+        "T1003",
+        "T1071",
+        "T1057"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-FAIL-001 Analysis**\n\n**Initial Findings:**\nWe have identified a potential security incident involving user **U12** with repeated suspicious authentication attempts originating from source **C13**.\n\n**Preliminary Assessment:**\nThe repeated authentication attempts by **U12** from **C13** may indicate a brute-force attack (MITRE: T1110) or a credential stuffing attack (MITRE: T1110). It i",
+          "**Incident Analysis**\n\nTo provide a thorough analysis, I would need the specific context of the security events and incidents. However, I can outline a general approach to mapping an incident to MITRE ATT&CK and identifying investigative pivots.\n\n**Mapping to MITRE ATT&CK**\n\nWithout specific details, I can suggest that common techniques used by adversaries include:\n- **MITRE: T1190** (Exploit Publ",
+          "To analyze the security events and incidents related to the same user from yesterday, I would compare the following in historical auth logs:\n\n1. **Login timestamps**: Compare the login timestamps from yesterday to identify any unusual patterns, such as multiple logins within a short period or logins during non-working hours.\n2. **Login locations**: Analyze the login locations (IP addresses, geoloc",
+          "**Containment Actions Recommendation**\n\nBased on the provided context, I recommend the following containment actions for the involved source:\n\n1. **Isolate the affected system**: Immediately isolate the system with IP address `192.168.1.100` to prevent any further potential lateral movement.\n2. **Block suspicious IP addresses**: Block all traffic from IP addresses `185.125.169.18` and `104.24.110."
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-failed-logins-001",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.5,
+      "consistency_score": 0.5321,
+      "personalization_score": 0.25,
+      "aggregate": 0.4346,
+      "latency_avg_ms": 1977.12,
+      "mitre_detected": [
+        "T1110",
+        "T1078",
+        "T1190",
+        "T1204"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-FAIL-001 Analysis**\n\n**Initial Findings:**\nUser `U12` has been identified as exhibiting repeated suspicious authentication behavior from source `C13`. This pattern of activity warrants further investigation to determine the intent and potential impact on the network.\n\n**Preliminary Observations:**\n\n1. **Authentication Attempts:** Multiple authentication attempts from `U12` at `C13` hav",
+          "**MITRE ATT&CK Mapping:**\n\nBased on the analysis, the following MITRE ATT&CK techniques are relevant:\n\n1. **T1110: Brute Force** - Repeated suspicious authentication attempts from `U12` at `C13` may indicate a brute-force attack.\n2. **T1078: Valid Accounts** - `U12`'s account may have been compromised or used in an unauthorized manner, indicating a potential account takeover.\n3. **T1190: Exploit f",
+          "**Historical Auth Log Comparison:**\n\nTo gain a deeper understanding of `U12`'s behavior, I would compare yesterday's authentication logs with the current suspicious activity. Specifically, I would look for the following:\n\n1. **Login Location and Device**:\n\t* Compare the login locations and devices used by `U12` yesterday with the current suspicious activity from `C13`.\n\t* Identify any changes in l",
+          "**Containment Actions for Source C13:**\n\nTo prevent further potential malicious activity from `C13`, I recommend the following containment actions:\n\n1. **Network Isolation**:\n\t* Immediately isolate `C13` from the rest of the network to prevent any potential lateral movement or data exfiltration.\n\t* Block all incoming and outgoing traffic to and from `C13` except for necessary management and monito"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-failed-logins-001",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.3875,
+      "consistency_score": 0.8235,
+      "personalization_score": 0.5,
+      "aggregate": 0.552,
+      "latency_avg_ms": 2047.44,
+      "mitre_detected": [
+        "T1110",
+        "T1078",
+        "T1550"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-FAIL-001 Analysis**\n\n**Summary:**\nThe security event log indicates that user **U12** has initiated repeated suspicious authentication attempts from source **C13**. This behavior is flagged as a potential security threat, warranting further investigation.\n\n**Initial Findings:**\n\n* **User:** U12\n* **Source:** C13 (likely a computer or IP address)\n* **Event Type:** Repeated suspicious aut",
+          "**MITRE ATT&CK Mapping:**\n\nThe security event log indicates that user **U12** has initiated repeated suspicious authentication attempts from source **C13**. Based on this information, the following MITRE ATT&CK techniques are relevant:\n\n* **MITRE: T1110** (Brute Force) - The repeated authentication attempts from **U12** at **C13** may indicate a brute-force attack to guess or crack passwords.\n* **",
+          "**Historical Auth Log Analysis for U12**\n\nTo compare the current security event with historical data, I would analyze the authentication logs for **U12** from the previous day (yesterday) and look for the following:\n\n1. **Login Frequency and Timing**: Compare the number of login attempts, successful and failed, from yesterday to the current day. Identify any changes in login frequency, timing, or ",
+          "**Containment Actions for Source C13**\n\nTo prevent further potential security threats, I recommend the following containment actions for the involved source **C13**:\n\n1. **Network Isolation**: Immediately isolate **C13** from the network to prevent any potential lateral movement or further malicious activity.\n2. **Block All Outbound Traffic**: Block all outbound traffic from **C13** to prevent any"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-failed-logins-001",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.5,
+      "consistency_score": 0.7978,
+      "personalization_score": 0.5,
+      "aggregate": 0.5893,
+      "latency_avg_ms": 3878.0,
+      "mitre_detected": [
+        "T1110",
+        "T1078",
+        "T1003"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-FAIL-001 Analysis**\n\n**Summary:**\nUser U12 has been identified as exhibiting repeated suspicious authentication behavior from source C13, triggering a heuristic alert.\n\n**Key Entities:**\n\n* **User:** U12\n* **Source:** C13 (likely a computer or IP address)\n\n**Initial Assessment:**\nThe repeated suspicious authentication attempts by U12 from C13 may indicate a potential security incident,",
+          "**MITRE ATT&CK Mapping:**\n\nThe suspicious authentication attempts by U12 from C13 can be mapped to the following MITRE ATT&CK techniques:\n\n* **Valid Accounts (MITRE: T1078)**: U12's credentials are being used to attempt authentication, indicating potential use of valid accounts.\n* **Brute Force (MITRE: T1110)**: The repeated suspicious authentication attempts may be indicative of a brute-force att",
+          "**Historical Auth Log Analysis:**\n\nTo compare yesterday's authentication activity for User U12, I would analyze the following historical auth log data:\n\n1. **Login Frequency and Patterns**: Compare the number of login attempts, successful and failed, for U12 yesterday versus the previous days or weeks. Look for:\n\t* Unusual spikes in login attempts\n\t* Changes in login frequency or timing (e.g., mor",
+          "**Containment Actions for Source C13:**\n\nTo prevent potential further malicious activity, I recommend the following containment actions for source C13:\n\n1. **Network Isolation**: Immediately isolate C13 from the network to prevent any potential lateral movement or communication with other systems. This can be done by:\n\t* Disconnecting C13 from the network\n\t* Blocking C13's IP address at the firewa"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-same-source-repeated",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.4292,
+      "consistency_score": 0.3949,
+      "personalization_score": 0.75,
+      "aggregate": 0.5151,
+      "latency_avg_ms": 3307.03,
+      "mitre_detected": [
+        "T1110",
+        "T1566",
+        "T1190",
+        "T1059",
+        "T1086",
+        "T1136",
+        "T1204",
+        "T1021",
+        "T1046",
+        "T1082"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE: LANL-SRC-001**\n\n**Initial Analysis:**\n\nWe have identified repeated failed login attempts originating from source `C148` for user `U16`. This pattern of behavior may indicate a potential brute-force attack (MITRE: T1110) or credential stuffing attempt (MITRE: T1110).\n\n**Key Observations:**\n\n* Source: `C148`\n* Target User: `U16`\n* Event Type: Repeated failed logins\n\n**Recommendations:**\n\n1. ",
+          "**MITRE ATT&CK Mapping**\n\nThe MITRE ATT&CK framework is a comprehensive matrix of tactics and techniques used by threat actors. It provides a common language for describing adversary behavior. Here are some key techniques that may be relevant in a security analysis:\n\n* **Initial Access**: Techniques used to gain initial access to a network or system, such as phishing (MITRE: T1566) or exploiting a",
+          "**Incident Analysis**\n\nBased on the provided context, I will analyze the activity related to a shared source token. \n\n**Hypotheses:**\n\n1. **Insider Threat**: A shared source token could be an indication of an insider threat, where an authorized user (e.g., `john.doe`) is intentionally or unintentionally sharing sensitive information with other users (e.g., `jane.smith`) or external entities. This ",
+          "**Incident Containment Recommendations**\n\nTo minimize business disruption, I recommend the following containment steps, prioritized based on potential impact:\n\n### High-Priority Containment Steps (Minimal Disruption)\n\n1. **Network Segmentation**: Isolate the affected systems/computers (e.g., `\\\\\\\\\\\\WORKSTATION01`) from the rest of the network to prevent lateral movement. This can be achieved by:\n\t"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-same-source-repeated",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.55,
+      "consistency_score": 0.9528,
+      "personalization_score": 0.75,
+      "aggregate": 0.7308,
+      "latency_avg_ms": 6646.31,
+      "mitre_detected": [
+        "T1110",
+        "T1204",
+        "T1078",
+        "T1190"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SRC-001 Analysis**\n\n**Initial Findings:**\nRepeated failed login attempts have been detected from source `C148` for user `U16`. This activity suggests potential brute-force or password spraying attempts, which may be indicative of an attacker trying to gain unauthorized access to the system.\n\n**MITRE ATT&CK Techniques:**\nThe observed behavior aligns with 'MITRE: T1110 - Brute Force' and",
+          "**MITRE ATT&CK Mapping:**\n\nThe observed behavior of repeated failed login attempts from source `C148` for user `U16` can be mapped to the following MITRE ATT&CK techniques:\n\n* **MITRE: T1110 - Brute Force**: The repeated failed login attempts suggest a brute-force attack, where the attacker is trying to guess the password through repeated attempts.\n* **MITRE: T1204 - User Execution**: If the attac",
+          "**Attribution Hypotheses:**\n\nBased on the repeated failed login attempts from source `C148` for user `U16`, the following hypotheses can be considered:\n\n1. **Insider Threat**: The shared source token `C148` may indicate an insider threat, where an authorized individual is attempting to access the system or user account without proper authorization.\n2. **Compromised Endpoint**: The source `C148` ma",
+          "**Containment Steps:**\n\nTo minimize business disruption, the following containment steps are recommended, prioritized from least to most disruptive:\n\n1. **Monitoring and Logging**:\n\t* Increase logging and monitoring of the affected system and user account (`U16`) to gather more information about the attack.\n\t* Configure logging to capture additional details, such as IP addresses, timestamps, and a"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-same-source-repeated",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.6208,
+      "consistency_score": 0.8589,
+      "personalization_score": 0.75,
+      "aggregate": 0.731,
+      "latency_avg_ms": 4647.78,
+      "mitre_detected": [
+        "T1110",
+        "T1190",
+        "T1078"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SRC-001 Analysis**\n\n**Summary:**\nRepeated failed login attempts have been detected from source `C148` targeting user `U16`. This activity suggests a potential brute-force attack.\n\n**Key Observations:**\n\n1. **Source IP/Host:** `C148` is the source of the repeated failed login attempts.\n2. **Target User:** `U16` is the user account being targeted.\n3. **Attack Vector:** The repeated faile",
+          "**MITRE ATT&CK Mapping:**\n\nThe repeated failed login attempts from source `C148` targeting user `U16` can be mapped to the following MITRE ATT&CK techniques:\n\n* **MITRE: T1110 - Brute Force**: The repeated failed login attempts indicate a brute-force attack, where the attacker is attempting to guess the password for `U16` through repeated login attempts.\n* **MITRE: T1190 - Exploit Public-Facing Ap",
+          "**Attribute Activity:**\n\nBased on the repeated failed login attempts from source `C148` targeting user `U16`, the following hypotheses fit a shared source token:\n\n1. **Insider Threat**: The shared source token `C148` could be a compromised or malicious insider attempting to gain unauthorized access to `U16`'s account. This hypothesis is supported by the fact that the attacker is using a valid user",
+          "**Containment Steps:**\n\nTo minimize business disruption, the following containment steps are recommended, prioritized from least to most disruptive:\n\n**Low-Disruption Containment Steps:**\n\n1. **Monitor and Log**: Continue to monitor and log all activity from source `C148` to gather more information about the attacker's tactics, techniques, and procedures (TTPs).\n2. **Alerting and Notification**: S"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-same-source-repeated",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.55,
+      "consistency_score": 0.8667,
+      "personalization_score": 0.75,
+      "aggregate": 0.705,
+      "latency_avg_ms": 4802.21,
+      "mitre_detected": [
+        "T1110",
+        "T1589",
+        "T1204",
+        "T1190",
+        "T1078",
+        "T1021",
+        "T1570"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SRC-001 Analysis**\n\n**Summary:**\nRepeated failed login attempts have been detected from source `C148` for user `U16`. This activity may indicate a brute-force attack or credential guessing attempt.\n\n**Key Observations:**\n\n* **Source:** `C148` is the source of the repeated failed login attempts.\n* **Target User:** `U16` is the user account being targeted.\n* **Activity Pattern:** Repeate",
+          "**MITRE ATT&CK Mapping:**\n\nThe repeated failed login attempts from source `C148` for user `U16` can be mapped to the following MITRE ATT&CK techniques:\n\n* **MITRE: T1110 (Brute Force)**: The repeated failed login attempts suggest a brute-force attack, where an attacker is attempting to guess the password for user `U16`.\n* **MITRE: T1589 (Credential Guessing)**: The activity may also be related to ",
+          "**Attribution of Activity:**\n\nThe repeated failed login attempts from source `C148` for user `U16` can be attributed to several hypotheses that fit a shared source token:\n\n1. **Single Attacker**: The most straightforward hypothesis is that a single attacker is using the source `C148` to launch a brute-force or credential guessing attack against user `U16`.\n2. **Compromised Device**: Another possib",
+          "**Containment Steps:**\n\nTo minimize business disruption, the following containment steps are recommended, prioritized from least to most disruptive:\n\n1. **Monitoring and Logging**:\n\t* Increase logging and monitoring of the source `C148` and user `U16`'s account activity.\n\t* Configure alerts for suspicious activity, such as multiple failed login attempts.\n\t* **MITRE: T1110 (Brute Force)**: This ste"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-suspicious-sequence",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.5125,
+      "consistency_score": 0.4819,
+      "personalization_score": 1.0,
+      "aggregate": 0.6496,
+      "latency_avg_ms": 3149.76,
+      "mitre_detected": [
+        "T1110",
+        "T1204",
+        "T1190",
+        "T1027",
+        "T1021",
+        "T1041",
+        "T1016",
+        "T1189",
+        "T1078",
+        "T1046"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SEQ-001 Analysis**\n\nWe have observed a sequence of events involving **USER U1** accessing the system from **SRC=C1**. The initial attempts resulted in **FAIL** outcomes, followed by a subsequent **SUCCESS**. This pattern suggests potential brute-force or password spraying activity, which aligns with 'MITRE: T1110 - Brute Force' and possibly 'MITRE: T1204 - User Execution' if the succes",
+          "**Anomaly Pattern Analysis**\n\nBased on the provided context, I have identified an anomaly pattern that warrants further investigation. The pattern involves a series of unusual login attempts from **IP address 192.168.1.100**, which is associated with a user named **JohnDoe**.\n\n**Pattern Description:**\n\n* Multiple failed login attempts (5+ attempts within a 10-minute window) from **192.168.1.100** ",
+          "To provide a precise analysis, I would need the specific sequence of security events or incidents you're referring to. However, I can give you a general overview of common MITRE ATT&CK techniques that often align with various sequences of security events.\n\nSome frequently observed techniques include:\n- **MITRE: T1190 (Exploit Public-Facing Application)**: This involves exploiting vulnerabilities i",
+          "To determine the next steps for the Security Operations Center (SOC) in verifying authentication telemetry, I would recommend the following:\n\n1. **Verify authentication attempts from unknown or unfamiliar locations**: The SOC should analyze authentication logs for attempts from IP addresses that are not commonly associated with the user or organization, such as `192.168.1.100` or `10.0.0.50`. This"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-suspicious-sequence",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.5375,
+      "consistency_score": 0.3232,
+      "personalization_score": 0.5,
+      "aggregate": 0.462,
+      "latency_avg_ms": 6491.77,
+      "mitre_detected": [
+        "T1110",
+        "T1204",
+        "T1189",
+        "T1078",
+        "T1021",
+        "T1550",
+        "T1558"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SEQ-001 Analysis**\n\nA sequence of events has been detected involving **USER U1** and **SRC C1**. The initial events show repeated **FAIL** attempts, which could indicate a brute-force attack (MITRE: T1110) or a user experiencing difficulties with authentication. However, these attempts are followed by a **SUCCESS** event, suggesting that **U1** eventually gained access from **C1**.\n\n**",
+          "**Anomaly Pattern: Repeated Failures Followed by Success**\n\nThe detected anomaly pattern involves a sequence of repeated failed login attempts by **USER U1** from **SRC C1**, immediately followed by a successful login. This pattern is characterized by:\n\n1. **Multiple Consecutive Failures:** A series of failed login attempts in a short timeframe, indicating potential guessing or brute-force activit",
+          "**MITRE Techniques Alignment**\n\nThe sequence of repeated failed login attempts followed by a successful login, as observed in **CASE LANL-SEQ-001**, commonly aligns with the following MITRE techniques:\n\n1. **T1110: Brute Force**: This technique involves attempting to guess a password or encryption key by trying all possible combinations. The repeated failed login attempts by **U1** from **C1** may",
+          "**Next Steps in Authentication Telemetry Verification**\n\nTo further investigate the incident, the Security Operations Center (SOC) should verify the following in authentication telemetry:\n\n1. **Login Location and Device**: Verify the login location and device used by **U1** to determine if the login was made from a familiar or expected location and device.\n2. **Login Time and Patterns**: Analyze t"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-suspicious-sequence",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.0958,
+      "consistency_score": 0.942,
+      "personalization_score": 0.25,
+      "aggregate": 0.3959,
+      "latency_avg_ms": 1566.01,
+      "mitre_detected": [
+        "T1110"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "**CASE LANL-SEQ-001 Analysis**\n\n**Initial Observation**: User U1 from source computer C1 had repeated failed login attempts followed by a successful login.\n\n**Potential Security Incident**: This pattern of behavior could indicate a brute-force attack (MITRE: T1110) or password spraying attempt (MITRE: T1110) by User U1. However, it is also possible that U1 simply forgot their password and eventual",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99325, Requested 1119. Please try again in 6m23.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99323, Requested 1489. Please try again in 11m41.568s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99322, Requested 1461. Please try again in 11m16.512s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-suspicious-sequence",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 648.81,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99319, Requested 807. Please try again in 1m48.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99310, Requested 1157. Please try again in 6m43.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99309, Requested 1328. Please try again in 9m10.367999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type':",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99308, Requested 1255. Please try again in 8m6.431999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': "
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-privilege-escalation",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.0625,
+      "consistency_score": 0.913,
+      "personalization_score": 0.25,
+      "aggregate": 0.3739,
+      "latency_avg_ms": 29537.17,
+      "mitre_detected": [
+        "T1046",
+        "T1071",
+        "T1110",
+        "T1078",
+        "T1204",
+        "T1059"
+      ],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99173, Requested 1006. Please try again in 2m34.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "To provide an accurate MITRE mapping, I need more context about the specific pattern you're referring to. However, I can guide you through a general approach to mapping a pattern to MITRE ATT&CK techniques.\n\nIf the pattern involves:\n- **Unusual network activity** from a specific IP (e.g., `192.168.1.100`) to a server (`\\\\\\\\\\\\server01`), it could be related to **MITRE: T1046** (Network Service Scan",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99571, Requested 796. Please try again in 5m17.088s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99570, Requested 969. Please try again in 7m45.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-privilege-escalation",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 766.65,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99568, Requested 826. Please try again in 5m40.416s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99567, Requested 994. Please try again in 8m4.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99566, Requested 1346. Please try again in 13m7.968s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99565, Requested 1266. Please try again in 11m57.983999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type'"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-privilege-escalation",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 1235.16,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99551, Requested 760. Please try again in 4m28.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99551, Requested 1174. Please try again in 10m26.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99550, Requested 1347. Please try again in 12m55.008s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99546, Requested 1513. Please try again in 15m14.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-privilege-escalation",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 607.65,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99542, Requested 1006. Please try again in 7m53.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99531, Requested 1175. Please try again in 10m9.984s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99530, Requested 1102. Please try again in 9m6.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99529, Requested 1334. Please try again in 12m25.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-lateral-movement",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 826.13,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99526, Requested 989. Please try again in 7m24.96s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99526, Requested 727. Please try again in 3m38.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99525, Requested 973. Please try again in 7m10.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99523, Requested 791. Please try again in 4m31.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-lateral-movement",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 516.32,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99520, Requested 743. Please try again in 3m47.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99520, Requested 912. Please try again in 6m13.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99519, Requested 1081. Please try again in 8m38.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99519, Requested 1495. Please try again in 14m36.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-lateral-movement",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 747.68,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99506, Requested 989. Please try again in 7m7.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens'",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99505, Requested 1158. Please try again in 9m32.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99504, Requested 1148. Please try again in 9m23.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99503, Requested 1316. Please try again in 11m47.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-lateral-movement",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 1113.87,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99499, Requested 989. Please try again in 7m1.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99490, Requested 912. Please try again in 5m47.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99489, Requested 1081. Please try again in 8m12.48s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99487, Requested 1495. Please try again in 14m8.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-after-hours",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 577.66,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99484, Requested 741. Please try again in 3m14.399999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': ",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99483, Requested 726. Please try again in 3m0.576s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99483, Requested 727. Please try again in 3m1.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens'",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99482, Requested 972. Please try again in 6m32.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-after-hours",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 530.36,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99480, Requested 741. Please try again in 3m10.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99479, Requested 1155. Please try again in 9m7.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99479, Requested 1325. Please try again in 11m34.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99478, Requested 1248. Please try again in 10m27.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-after-hours",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 863.59,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99465, Requested 987. Please try again in 6m30.527999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': ",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99463, Requested 911. Please try again in 5m23.135999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': ",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99462, Requested 1148. Please try again in 8m47.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99461, Requested 1251. Please try again in 10m15.168s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-after-hours",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 1277.42,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99457, Requested 807. Please try again in 3m48.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99448, Requested 975. Please try again in 6m5.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99447, Requested 1078. Please try again in 7m33.6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99444, Requested 1313. Please try again in 10m54.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-credential-stuffing",
+      "memory_mode": "no_memory",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.3259,
+      "personalization_score": 0.0,
+      "aggregate": 0.0978,
+      "latency_avg_ms": 640.83,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99435, Requested 822. Please try again in 3m42.047999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': ",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99434, Requested 730. Please try again in 2m21.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99433, Requested 726. Please try again in 2m17.376s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99432, Requested 727. Please try again in 2m17.376s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-credential-stuffing",
+      "memory_mode": "short_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 486.63,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99971, Requested 822. Please try again in 11m25.151999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type':",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99970, Requested 996. Please try again in 13m54.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99969, Requested 1344. Please try again in 18m54.432s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99969, Requested 1334. Please try again in 18m45.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-credential-stuffing",
+      "memory_mode": "long_term",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 595.6,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99959, Requested 1002. Please try again in 13m50.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99958, Requested 1214. Please try again in 16m52.608s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99958, Requested 1383. Please try again in 19m18.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99957, Requested 1553. Please try again in 21m44.64s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke"
+        ]
+      }
+    },
+    {
+      "scenario_id": "lanl-credential-stuffing",
+      "memory_mode": "hybrid",
+      "turns": 4,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 500.19,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99955, Requested 1041. Please try again in 14m20.544s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99946, Requested 995. Please try again in 13m33.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99946, Requested 1343. Please try again in 18m33.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99945, Requested 1552. Please try again in 21m33.408s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    },
+    {
+      "scenario_id": "cross-session-recall-001",
+      "memory_mode": "no_memory",
+      "turns": 3,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 473.28,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99943, Requested 1040. Please try again in 14m9.312s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99942, Requested 977. Please try again in 13m14.016s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99942, Requested 986. Please try again in 13m21.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke"
+        ]
+      }
+    },
+    {
+      "scenario_id": "cross-session-recall-001",
+      "memory_mode": "short_term",
+      "turns": 3,
+      "retention_score": 0.0,
+      "consistency_score": 0.913,
+      "personalization_score": 0.0,
+      "aggregate": 0.2739,
+      "latency_avg_ms": 749.62,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99939, Requested 1040. Please try again in 14m5.856s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99938, Requested 1214. Please try again in 16m35.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99937, Requested 986. Please try again in 13m17.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'toke"
+        ]
+      }
+    },
+    {
+      "scenario_id": "cross-session-recall-001",
+      "memory_mode": "long_term",
+      "turns": 3,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 595.96,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99927, Requested 1040. Please try again in 13m55.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99926, Requested 995. Please try again in 13m15.743999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type':",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99925, Requested 1025. Please try again in 13m40.8s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'token"
+        ]
+      }
+    },
+    {
+      "scenario_id": "cross-session-recall-001",
+      "memory_mode": "hybrid",
+      "turns": 3,
+      "retention_score": 0.0,
+      "consistency_score": 0.942,
+      "personalization_score": 0.0,
+      "aggregate": 0.2826,
+      "latency_avg_ms": 487.71,
+      "mitre_detected": [],
+      "details": {
+        "assistant_turns_preview": [
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99923, Requested 1040. Please try again in 13m52.031999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type'",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99915, Requested 1216. Please try again in 16m17.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok",
+          "[LLM error] RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k95ejf84eyhbqqy7nzeevzgp` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99914, Requested 1025. Please try again in 13m31.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tok"
+        ]
+      }
+    }
+  ]
+}

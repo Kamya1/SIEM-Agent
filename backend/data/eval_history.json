@@ -1,0 +1,57 @@
+[
+  {
+    "run_id": "7c753632-e016-4787-98ee-73dc0f02f29a",
+    "ts": "2026-05-12T17:53:28.456350+00:00",
+    "summary_by_mode": {},
+    "source": "dataset:lanl_auth_sample.csv"
+  },
+  {
+    "run_id": "3ba8caa8-1ad1-4197-add2-32b5da4f0ba2",
+    "ts": "2026-05-12T17:53:55.257184+00:00",
+    "summary_by_mode": {
+      "no_memory": {
+        "retention_avg": 0.5125,
+        "consistency_avg": 0.5453,
+        "personalization_avg": 0.5,
+        "aggregate_avg": 0.5186,
+        "latency_avg_ms": 2438.44
+      }
+    },
+    "source": "dataset:lanl_auth_sample.csv"
+  },
+  {
+    "run_id": "e87f0e6c-9315-4dea-99e8-ef8d3e7370b5",
+    "ts": "2026-05-12T18:09:40.129016+00:00",
+    "summary_by_mode": {
+      "no_memory": {
+        "retention_avg": 0.1833375,
+        "consistency_avg": 0.6653125,
+        "personalization_avg": 0.34375,
+        "aggregate_avg": 0.37605,
+        "latency_avg_ms": 5048.35125
+      },
+      "short_term": {
+        "retention_avg": 0.1984375,
+        "consistency_avg": 0.8038875,
+        "personalization_avg": 0.1875,
+        "aggregate_avg": 0.3767875,
+        "latency_avg_ms": 2270.5975000000003
+      },
+      "long_term": {
+        "retention_avg": 0.1380125,
+        "consistency_avg": 0.905925,
+        "personalization_avg": 0.1875,
+        "aggregate_avg": 0.383225,
+        "latency_avg_ms": 1537.4025
+      },
+      "hybrid": {
+        "retention_avg": 0.13125,
+        "consistency_avg": 0.9109375,
+        "personalization_avg": 0.15625,
+        "aggregate_avg": 0.37265000000000004,
+        "latency_avg_ms": 1664.4825
+      }
+    },
+    "source": "dataset:lanl_auth_sample.csv"
+  }
+]

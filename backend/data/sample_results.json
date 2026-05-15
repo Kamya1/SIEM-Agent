@@ -1,0 +1,24 @@
+{
+  "note": "Example output from scripts/run_eval.py (mock LLM). Your numbers may differ slightly if prompts change.",
+  "summary_by_mode": {
+    "none": {
+      "retention_avg": 0.0,
+      "consistency_avg": 0.0,
+      "personalization_avg": 0.5,
+      "aggregate_avg": 0.167
+    },
+    "short_term": {
+      "retention_avg": 1.0,
+      "consistency_avg": 1.0,
+      "personalization_avg": 1.0,
+      "aggregate_avg": 1.0
+    },
+    "long_term": {
+      "retention_avg": 1.0,
+      "consistency_avg": 1.0,
+      "personalization_avg": 1.0,
+      "aggregate_avg": 1.0
+    }
+  },
+  "interpretation": "No memory cannot satisfy recall-style questions. STM/LTM include prior user turns (and LTM adds retrieved chunks), so benchmark scores rise. With a real LLM, use the same harness and optionally add an LLM-as-judge for subjective quality."
+}

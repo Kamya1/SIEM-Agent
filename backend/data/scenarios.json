@@ -1,0 +1,26 @@
+[
+  {
+    "id": "static-fallback-001",
+    "description": "Fallback when LANL CSV is unavailable.",
+    "mitre_technique": "T1078",
+    "severity": "MEDIUM",
+    "preseed_ltm": [],
+    "turns": [
+      {
+        "user_msg": "CASE=INC-9001. USER=alice shows repeated failed VPN logins from SRC=203.0.113.10.",
+        "expected_keywords": ["alice", "failed", "203.0.113.10", "vpn"],
+        "personalization_phrase": "Always include a line starting with MITRE: referencing a technique ID."
+      },
+      {
+        "user_msg": "What user token was in my first message?",
+        "expected_keywords": ["alice", "user"],
+        "personalization_phrase": "Always include a line starting with MITRE: referencing a technique ID."
+      },
+      {
+        "user_msg": "Recommend next verification steps and reference CASE and SRC.",
+        "expected_keywords": ["INC-9001", "203.0.113.10"],
+        "personalization_phrase": "Reply in bullet points using '-' markers."
+      }
+    ]
+  }
+]
