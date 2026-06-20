@@ -29,28 +29,46 @@ def key_path() -> Path:
 
 
 def encryption_enabled() -> bool:
-    return key_path().is_file()
+    import os
+
+    return bool(os.environ.get("LTM_ENCRYPTION_KEY")) or key_path().is_file()
 
 
 def _load_or_create_fernet() -> Fernet:
     global _fernet
     if _fernet is not None:
         return _fernet
+
+    # 1. Prefer an explicit env var — required on Vercel, where the filesystem
+    #    is read-only outside /tmp and /tmp does not persist between invocations.
+    import os
+
+    env_key = os.environ.get("LTM_ENCRYPTION_KEY")
+    if env_key:
+        _fernet = Fernet(env_key.strip().encode("ascii"))
+        return _fernet
+
+    # 2. Fall back to a key file on disk (local / non-serverless deployments).
     kp = key_path()
     if kp.is_file():
         key = kp.read_bytes().strip()
     else:
         key = Fernet.generate_key()
-        kp.write_bytes(key)
-        logger.info("Generated new LTM encryption key at %s", kp)
         try:
+            kp.write_bytes(key)
+            logger.info("Generated new LTM encryption key at %s", kp)
             gitignore = _project_root().parent / ".gitignore"
             if gitignore.is_file():
                 content = gitignore.read_text(encoding="utf-8")
                 if ".ltm_key" not in content:
                     gitignore.write_text(content.rstrip() + "\n.ltm_key\n", encoding="utf-8")
         except OSError:
-            pass
+            # Read-only filesystem (e.g. serverless) — use an ephemeral
+            # in-memory key for this process instead of crashing.
+            logger.warning(
+                "Could not persist LTM key to disk; using an ephemeral key. "
+                "Set LTM_ENCRYPTION_KEY env var for stable encryption across restarts."
+            )
     _fernet = Fernet(key)
     return _fernet
 
